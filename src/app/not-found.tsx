@@ -1,105 +1,57 @@
-import { Search, ShoppingBag, User } from 'lucide-react'
-import Link from 'next/link'
 import React from 'react'
+import Link from 'next/link'
+import { RxCaretRight } from "react-icons/rx";
 
-
-export default function notFound() {
+const NotFound = () => {
   return (
-    <div className='min-h-screen'>
-        {/* navbar */}
-        <header className="top-0 left-0 right-0 z-50">
-      <nav className="bg-black px-4 md:px-6">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center text-xl font-bold text-white">
-            Food<span className="text-orange-500">tuck</span>
+    <div>
+
+        <section className='w-full bg-[url("/Images/HeaderImage.png")] bg-cover bg-no-repeat bg-center py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28'>
+    <div className='container mx-auto px-4'>
+      <div className='flex flex-col items-center'>
+        <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-white font-bold text-center mb-4 sm:mb-6'>
+          404 Error
+        </h1>
+        <div className='text-base sm:text-lg md:text-xl flex items-center text-center justify-center'>
+          <Link href="/" className='text-white hover:text-[#FF9F0D] transition-colors duration-300'>
+            Home
           </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden items-center gap-8 md:flex">
-            
-            <Link href="/" className="text-orange-500">
-              Home
-            </Link>
-            <Link href="/menu" className="text-white hover:text-orange-500">
-              Menu
-            </Link>
-            <Link href="/blog" className="text-white hover:text-orange-500">
-              Blog
-            </Link>
-            <Link href="/pages" className="text-white hover:text-orange-500">
-              Pages
-            </Link>
-            <Link href="/about" className="text-white hover:text-orange-500">
-              About
-            </Link>
-            <Link href="/shop" className="text-white hover:text-orange-500">
-              Shop
-            </Link>
-            <Link href="/contact" className="text-white hover:text-orange-500">
-              Contact
-            </Link>
-          </div>
-
-          {/* Right Icons */}
-          <div className="flex items-center gap-4">
-            
-            <button className="text-white hover:text-orange-500">
-              <Search className="h-5 w-5" />
-              <span className="sr-only">Search</span>
-            </button>
-            <Link
-            href="/account">
-            <button className="text-white hover:text-orange-500">
-              <User className="h-5 w-5" />
-              <span className="sr-only">Account</span>
-            </button>
-            </Link>
-            <Link href="/cart">
-            <button className="text-white hover:text-orange-500">
-              <ShoppingBag className="h-5 w-5" />
-              <span className="sr-only">Cart</span>
-            </button>
-            </Link>
-            </div>
-          </div>
-      </nav>
-
-      {/* Hero Section */}
-      <div className="relative h-[300px] w-full bg-cover bg-center" style={{ backgroundImage: `url('/home-pic-1.png')` }}>
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-4 text-center">
-          <h1 className="mb-4 text-5xl font-bold text-white">404 Error</h1>
-          <div className="flex items-center gap-2 text-lg">
-            <Link href="/" className="text-white hover:text-orange-500">
-              Home
-            </Link>
-            <span className="text-white">&gt;</span>
-            <span className="text-orange-500">404</span>
-          </div>
+          <span className='text-white'>
+          <RxCaretRight />
+          </span>
+          <Link href="/menu" className='text-[#FF9F0D]'>
+            404
+          </Link>
         </div>
       </div>
-        </header>
-        {/* navbar end */}
+    </div>
+  </section>
 
-    <main className="flex  flex-col items-center justify-center p-4 mt-7 mb-7">
-              <div className="text-center ">
-                  <h1 className="mb-4 text-6xl font-bold tracking-tight text-orange-500 p-6">
-                      404
-                  </h1>
-                  <h1 className='text-3xl font-bold'>Oops! Look likes something going wrong</h1>
-                  <p className="mb-8 text-muted-foreground p-2">
-                  Page Cannot be found! we’ll have it figured out in no time. Menwhile, cheek out these fresh ideas:
-                  </p>
-
-                  <Link href="/">
-                      <button className="bg-yellow-400 hover:bg-yellow-300 p-3 rounded-2xl">
-                          Go To Home
-                      </button>
-                  </Link>
-              </div>
-          </main>
-
-          </div>
+    <div className="min-h-screen bg-white">
+      
+      {/* Signup Form Section */}
+      <section className="p-10 relative bg-white pt-36 flex flex-col items-center">
+        <div className="w-[630px] text-center">
+          <h3 className="text-[96px] font-bold text-[#FF9F0D] mb-6">404</h3>
+          <p className="font-bold text-[32px] mb-4">
+            Oops! Looks like something went wrong
+          </p>
+          <p className="text-[18px] mb-4">
+            Page cannot be found! We’ll have it figured out in no time.
+          </p>
+          <p className="text-[18px] mb-6">
+            Meanwhile, check out these fresh ideas:
+          </p>
+          {/* Button */}
+          <Link href="/">
+            <button className="bg-[#FF9F0D] text-white text-[18px] font-bold px-6 py-2 rounded hover:bg-[#e8890b]">
+              Go Back to Home
+            </button>
+          </Link>
+        </div>
+      </section>
+    </div></div>
   )
 }
+
+export default NotFound
